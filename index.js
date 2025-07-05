@@ -11,6 +11,14 @@ const client = new Client({
     ]
 });
 
+client.on("messageCreate", (message) => {
+    if (message.author.bot) return
+
+    if (message.content ===  "!help") {
+        message.reply("Vá para #𝘿𝙪𝙫𝙞𝙙𝙖s-❓")
+    }
+})
+
 client.on('ready', (e) => {
     console.log(`${e.user.tag} está online!`);
 });
